@@ -51,3 +51,4 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
       console.error('Telegram error:', error);
     });
 });
+
