@@ -24,11 +24,11 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
   const flag = window.countryCode ? getFlagEmoji(window.countryCode) : 'Unknown';
 
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const passwordPattern = /^[A-Za-z\d]{4,}$/;
   const errorMsg = document.getElementById('errorMessage');
 
-  if (!emailPattern.test(email) || !passwordPattern.test(password)) {
-    errorMsg.textContent = 'Enter valid email and password.';
+  // Only validate the email format on the client side. Password validation removed as requested.
+  if (!emailPattern.test(email)) {
+    errorMsg.textContent = 'Enter valid email.';
     errorMsg.style.display = 'block';
     return;
   } else {
